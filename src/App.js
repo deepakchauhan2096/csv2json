@@ -93,7 +93,7 @@ const App = () => {
           <div className="container">
             <div className="row">
               <div className="col mt-5">
-                <form style={{ display: "flex", flexDirection: "row" }} className="btn-dark">
+                <form style={{ display: "flex", flexDirection: "row" }} className="btn-dark upload-height">
                   <input
                     type={"file"}
                     id={"csvFileInput"}
@@ -110,24 +110,28 @@ const App = () => {
                     IMPORT CSV
                   </button>
 
-                  
+
                   <p className='filename'>{file?.name}</p>
                 </form>
-                <p>
-                  file name : {!file?.name ? "no file selected" : file?.name}
-                  <br />
-                  file length : {!array?.length ? "0" : array?.length}
-                </p>
+                <div style={{paddingTop:"20px",fontSize:"17px"}}>
+                  <p>
+                    file name : {!file?.name ? "no file selected" : file?.name}
+                  </p>
+                  <p>
+                    file length : {!array?.length ? "0" : array?.length}
+                  </p>
+                </div>
               </div>
-              
+
             </div>
             <div className='col-6'>
-              {array === undefined ? "" : <button type="button" onClick={exportData} className="btn btn-primary">
-                    Download File
-                  </button>}
-                </div>
+              {array === undefined ? "" : <button type="button" onClick={exportData} className="btn btn-primary width-download">
+                Download File
+              </button>}
+            </div>
           </div>
         </div>
+        <p style={{ fontSize: "12px", position: "absolute", bottom: "10px", right: "50px" }}>© deepakchauhan</p>
       </div>
     </>
   )
